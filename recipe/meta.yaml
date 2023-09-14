@@ -21,8 +21,10 @@ requirements:
     - cmake
     - ninja
   host:
+    # Keep consistency with vcpkg:
+    # https://github.com/Azure/azure-sdk-for-cpp/blob/main/sdk/storage/azure-storage-blobs/vcpkg/vcpkg.json
     - azure-core-cpp
-    - azure-storage-common-cpp >=12.3.1
+    - azure-storage-common-cpp >=12.4.0
 
 test:
   requires:
