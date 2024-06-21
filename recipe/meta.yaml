@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("azure-storage-blobs-cpp", max_pin="x.x.x") }}
 
@@ -22,10 +22,9 @@ requirements:
     - cmake
     - ninja
   host:
-    # Keep consistency with vcpkg:
-    # https://github.com/Azure/azure-sdk-for-cpp/blob/main/sdk/storage/azure-storage-blobs/vcpkg/vcpkg.json
+    # azure-core-cpp and azure-storage-common-cpp are pinned in conda-forge-pinning-feedstock
     - azure-core-cpp
-    - azure-storage-common-cpp >=12.6.0
+    - azure-storage-common-cpp
 
 test:
   requires:
