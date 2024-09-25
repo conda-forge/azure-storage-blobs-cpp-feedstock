@@ -1,5 +1,5 @@
-{% set version = "12.12.0" %}
-{% set sha256 = "cf668fffa798bfec96a8d7f11ccab1c4f685794c966a02609c23924f558030a6" %}
+{% set version = "12.13.0" %}
+{% set sha256 = "300bbd1d6bc50b8988b3dda29d6d627574a4f3e25a7e00a6986da5d3965f679a" %}
 
 package:
   name: azure-storage-blobs-cpp
