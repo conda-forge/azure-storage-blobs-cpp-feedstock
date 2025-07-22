@@ -1,5 +1,5 @@
-{% set version = "12.13.0" %}
-{% set sha256 = "300bbd1d6bc50b8988b3dda29d6d627574a4f3e25a7e00a6986da5d3965f679a" %}
+{% set version = "12.14.0" %}
+{% set sha256 = "5ebd63d6d5c22702b504efef1acf0265ceff90dcf96b9c1e52c418bbd7c5deb4" %}
 
 package:
   name: azure-storage-blobs-cpp
@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   run_exports:
     - {{ pin_subpackage("azure-storage-blobs-cpp", max_pin="x.x.x") }}
 
