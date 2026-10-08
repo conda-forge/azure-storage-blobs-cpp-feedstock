@@ -25,6 +25,7 @@ requirements:
     # azure-core-cpp and azure-storage-common-cpp are pinned in conda-forge-pinning-feedstock
     - azure-core-cpp
     - azure-storage-common-cpp
+    - libnanoarrow
 
 test:
   requires:
