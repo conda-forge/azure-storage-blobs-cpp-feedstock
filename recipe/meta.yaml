@@ -25,6 +25,12 @@ requirements:
     # azure-core-cpp and azure-storage-common-cpp are pinned in conda-forge-pinning-feedstock
     - azure-core-cpp
     - azure-storage-common-cpp
+    - nanoarrow
+    # Transitive dependencies of nanoarrow.
+    # TODO: Can they be removed? Nanoarrow should be built as a shared library,
+    # and not export its transitive dependencies.
+    - lz4-c
+    - zstd
 
 test:
   requires:
