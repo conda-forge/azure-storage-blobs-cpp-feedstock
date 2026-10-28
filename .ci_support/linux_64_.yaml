@@ -1,3 +1,5 @@
+DOCKER_PLATFORM:
+- linux/amd64
 azure_core_cpp:
 - 1.16.4
 azure_storage_common_cpp:
@@ -16,5 +18,9 @@ cxx_compiler_version:
 - '15'
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma10
+lz4_c:
+- '1.10'
 target_platform:
 - linux-64
+zstd:
+- '1.5'
