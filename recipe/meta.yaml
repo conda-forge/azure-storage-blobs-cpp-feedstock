@@ -8,6 +8,9 @@ package:
 source:
   url: https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-storage-blobs_{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    # To be removed after https://github.com/conda-forge/nanoarrow-feedstock/pull/15 gets merged.
+    - 0001-libnanoarrow-shared.patch
 
 build:
   number: 0
@@ -26,11 +29,6 @@ requirements:
     - azure-core-cpp
     - azure-storage-common-cpp
     - libnanoarrow
-    # Transitive dependencies of libnanoarrow.
-    # TODO: Can they be removed? Nanoarrow should be built as a shared library,
-    # and not export its transitive dependencies.
-    - lz4-c
-    - zstd
 
 test:
   requires:
