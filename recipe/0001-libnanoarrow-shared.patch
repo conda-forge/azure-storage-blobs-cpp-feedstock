@@ -1,0 +1,13 @@
+diff --git a/sdk/storage/azure-storage-blobs/CMakeLists.txt b/sdk/storage/azure-storage-blobs/CMakeLists.txt
+index 91f4f68..1ef593e 100644
+--- a/sdk/storage/azure-storage-blobs/CMakeLists.txt
++++ b/sdk/storage/azure-storage-blobs/CMakeLists.txt
+@@ -97,7 +97,7 @@ add_library(flatccrt STATIC IMPORTED)
+ find_library(FLATCCRT_LIB_PATH_DEBUG NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}flatccrt_d${CMAKE_STATIC_LIBRARY_SUFFIX} ${CMAKE_STATIC_LIBRARY_PREFIX}flatccrt${CMAKE_STATIC_LIBRARY_SUFFIX})
+ find_library(FLATCCRT_LIB_PATH_RELEASE NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}flatccrt${CMAKE_STATIC_LIBRARY_SUFFIX})
+ set_target_properties(flatccrt PROPERTIES IMPORTED_LOCATION_DEBUG ${FLATCCRT_LIB_PATH_DEBUG} IMPORTED_LOCATION_RELEASE ${FLATCCRT_LIB_PATH_RELEASE} IMPORTED_CONFIGURATIONS "Release;Debug")
+-target_link_libraries(azure-storage-blobs PRIVATE nanoarrow::nanoarrow nanoarrow::nanoarrow_ipc)
++target_link_libraries(azure-storage-blobs PRIVATE nanoarrow::nanoarrow_shared nanoarrow::nanoarrow_ipc_shared)
+ 
+ target_compile_definitions(azure-storage-blobs PRIVATE _azure_BUILDING_SDK)
+ 

@@ -1,5 +1,5 @@
-{% set version = "12.18.0" %}
-{% set sha256 = "0f266f91cf00b79bb6c7c6f99e44942b43a7141db565556a4298f6ebe3a86fcc" %}
+{% set version = "12.19.1" %}
+{% set sha256 = "2f7af311f5c21b3eaf797d3184b50ac741652e534b3b3d0346a4bb88427c6d06" %}
 
 package:
   name: azure-storage-blobs-cpp
@@ -8,9 +8,12 @@ package:
 source:
   url: https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-storage-blobs_{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    # To be removed after https://github.com/conda-forge/nanoarrow-feedstock/pull/15 gets merged.
+    - 0001-libnanoarrow-shared.patch
 
 build:
-  number: 2
+  number: 0
   run_exports:
     - {{ pin_subpackage("azure-storage-blobs-cpp", max_pin="x.x.x") }}
 
@@ -25,6 +28,7 @@ requirements:
     # azure-core-cpp and azure-storage-common-cpp are pinned in conda-forge-pinning-feedstock
     - azure-core-cpp
     - azure-storage-common-cpp
+    - libnanoarrow
 
 test:
   requires:
