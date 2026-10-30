@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-storage-blobs_{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - 0001-libnanoarrow-shared.patch
 
 build:
   number: 0
